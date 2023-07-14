@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"HomePage"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+
+			<section class="hero">
+				<div class="hero__container">
+					<div class="hero__body">
+						<div class="hero__logo"><img src="@img/logo.svg" alt=""></div>
+						<h1 class="hero__title">
+							<div class="hero__title-one">Агентство </div>
+							<div class="hero__title-two">репутационного</div>
+							<div class="hero__title-three">МАРКЕТИНГА</div>
+						</h1>
+						<button class="hero__button">связаться</button>
+					</div>
+				</div>
+			</section>
+
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

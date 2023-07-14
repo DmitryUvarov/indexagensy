@@ -1,0 +1,106 @@
+//====================================================================================================
+.hero {
+  background-color: #313131;
+  padding: rem(120) 0 rem(50);
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__logo {
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    color: var(--purple, #9582d7);
+    font-family: Wix Madefor Display;
+    font-size: rem(100);
+    @include adaptiveValue("font-size", 100, 35);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__title-one {
+  }
+
+  &__title-two {
+    color: #fffdf6;
+  }
+
+  &__title-three {
+    font-family: Inter;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  &__button {
+    position: relative;
+    @include adaptiveValue("width", 183, 150);
+    @include adaptiveValue("height", 183, 150);
+    font-size: rem(25);
+    line-height: 124%; /* 31/25 */
+    font-weight: 400;
+    margin-left: auto;
+    @include adaptiveValue("margin-right", 225, 75);
+    margin-top: rem(40);
+
+    transform: rotate(20deg);
+    transition: all 0.3s ease 0s;
+
+    @media (max-width: $mobile) {
+      margin-right: auto;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #ccca38;
+      border-radius: 50%;
+      z-index: -2;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(
+        180deg,
+        #ef3131 13.54%,
+        #f35b30 22.4%,
+        #f77d30 29.69%,
+        #fba530 38.02%,
+        #ffd12f 47.4%,
+        #ccca38 54.17%,
+        #92c342 61.98%,
+        #5bbc4c 69.27%,
+        #34b753 74.48%,
+        #00b05c 81.45%
+      );
+      filter: drop-shadow(0px 4px 22px #554409);
+      border-radius: 50%;
+      opacity: 0.6;
+      z-index: -1;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        transform: rotate(10deg);
+      }
+    }
+  }
+}
+
+//====================================================================================================

@@ -1,0 +1,148 @@
+//====================================================================================================
+.header {
+  position: absolute;
+  width: 100%;
+
+  @include adaptiveValue("padding-top", 45, 25);
+  @include adaptiveValue("padding-bottom", 45, 25);
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background-color: #313131;
+    border-bottom: 1px solid #313131;
+    z-index: 5;
+    -webkit-transition: all 0.3s ease 0s;
+    transition:
+      left 0.3s ease 0s,
+      border-color 0.3s ease 0.3s;
+
+    .menu-open & {
+      left: 0;
+      border-color: #fffdf7;
+    }
+  }
+  &__container {
+  }
+
+  &__menu {
+  }
+}
+.menu {
+  &__icon {
+  }
+
+  &__body {
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: -50%;
+    overflow: auto;
+    background-color: #313131;
+    @include adaptiveValue("padding-top", 130, 100);
+    padding: rem(130) rem(15) rem(40);
+    z-index: 4;
+    padding-left: calc((100vw - 1200px) / 2);
+    border-right: 1px solid #313131;
+    transition:
+      left 0.3s ease 0s,
+      border-color 0.3s ease 0.3s;
+
+    @media (min-width: $tablet) {
+      padding-right: rem(100);
+    }
+    @media (max-width: $pc) {
+      padding-left: rem(15);
+    }
+    @media (max-width: $mobile) {
+      width: 100%;
+      left: -100%;
+      border: none;
+    }
+
+    .menu-open & {
+      left: 0;
+      border-color: #fffdf7;
+    }
+  }
+
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: rem(24);
+    color: #fffdf7;
+    padding: rem(10) 0;
+    width: 100%;
+    border-bottom: 2px solid #fffdf7;
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        border-color: rgba(81, 81, 81, 0.9);
+        color: rgba(81, 81, 81, 0.9);
+      }
+    }
+  }
+}
+
+//====================================================================================================
+
+//Burger
+
+.icon-menu {
+  display: block;
+  position: relative;
+  @include adaptiveValue("width", 50, 40);
+  @include adaptiveValue("height", 16, 14);
+  z-index: 5;
+  @media (any-hover: none) {
+    cursor: default;
+  }
+  span,
+  &::before,
+  &::after {
+    content: "";
+    transition: all 0.3s ease 0s;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: rem(4);
+    background-color: #fffdf7;
+    border-radius: rem(1);
+  }
+  &::before {
+    top: 0;
+  }
+  &::after {
+    bottom: 0;
+  }
+  span {
+    top: calc(50% - rem(2));
+  }
+  .menu-open & {
+    span {
+      width: 0;
+    }
+    &::before,
+    &::after {
+    }
+    &::before {
+      top: calc(50% - rem(2));
+      transform: rotate(-45deg);
+    }
+    &::after {
+      bottom: calc(50% - rem(2));
+      transform: rotate(45deg);
+    }
+  }
+}
