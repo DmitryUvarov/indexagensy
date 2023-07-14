@@ -105,13 +105,13 @@
 //====================================================================================================
 
 .services {
+  padding: rem(40) 0 0;
   &__container {
   }
 
   &__body {
     display: flex;
     gap: rem(20);
-    padding: rem(40) 0;
 
     @media (max-width: $mobile) {
       flex-direction: column;
@@ -194,7 +194,13 @@
   }
 
   &__maintitle {
+    position: relative;
+    z-index: 1;
     @include adaptiveValue("margin-bottom", 48, 35);
+
+    @media (min-width: $tablet) {
+      max-width: rem(470);
+    }
   }
 
   &__brand {
@@ -220,6 +226,13 @@
   &__img {
     img {
       max-width: 100%;
+    }
+
+    &_ilustration {
+      display: flex;
+      justify-content: flex-end;
+
+      @include adaptiveValue("margin-top", -120, -70);
     }
   }
 
@@ -303,6 +316,24 @@
       top: rem(6);
       left: rem(-24);
     }
+  }
+
+  &__clients {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @include adaptiveValue("column-gap", 50, 30);
+    @include adaptiveValue("row-gap", 40, 20);
+
+    @include adaptiveValue("margin-top", 64, 30);
+
+    @media (min-width: $tablet) {
+      justify-content: space-between;
+    }
+  }
+
+  &__clients-item {
   }
 }
 
@@ -456,6 +487,10 @@
     background-color: transparent;
     @include adaptiveValue("font-size", 22, 20);
 
+    &::placeholder {
+      color: #313131;
+    }
+
     &:focus {
       outline: none;
     }
@@ -495,6 +530,7 @@
   }
 
   &__title {
+    text-align: left;
     max-width: rem($maxWidthContainer);
     margin: 0 auto;
 
@@ -594,16 +630,6 @@
     @media (max-width: $tablet) {
       margin-bottom: rem(0);
     }
-
-    &::before {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      @include adaptiveValue("font-size", 105, 75);
-      z-index: 2;
-      color: #fffdf7;
-    }
   }
 
   &__content {
@@ -656,6 +682,57 @@
 
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 15, 10);
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.about {
+  @include adaptiveValue("padding-top", 150, 50);
+  @include adaptiveValue("padding-bottom", 75, 50);
+  &__container {
+  }
+
+  &__body {
+  }
+
+  &__content {
+    display: flex;
+    column-gap: rem(50);
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      row-gap: rem(30);
+    }
+  }
+
+  &__title {
+    flex: 0 0 percent(500, 1200);
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%; /* 22.4px */
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: rem(15);
+      }
+    }
+  }
+
+  &__video-ibg {
+    margin-top: rem(30);
+    padding-bottom: percent(520, 1200);
+    display: block;
+
+    @media (max-width: $mobile) {
+      padding-bottom: percent(260, 345);
+
+      margin-right: rem(-15);
+      margin-left: rem(-15);
     }
   }
 }
