@@ -35,7 +35,6 @@
   }
 
   &__title-three {
-    font-family: Inter;
     font-style: italic;
     font-weight: 400;
   }
@@ -160,3 +159,255 @@
 }
 
 //========================================================================================================================================================
+
+.sec {
+  background: var(--purple-background, #b6aed3);
+  box-shadow: 0px -4px 15px 0px rgba(62, 59, 71, 0.25);
+
+  padding: rem(65) 0 rem(70);
+  &__container {
+  }
+
+  &__body {
+  }
+}
+
+.block {
+  display: flex;
+  column-gap: rem(50);
+
+  &:not(:last-child) {
+    margin-bottom: rem(70);
+  }
+
+  &__inner {
+    flex: 0 0 rem(480);
+  }
+
+  &__maintitle {
+    margin-bottom: rem(48);
+  }
+
+  &__brand {
+  }
+
+  &__image {
+    border-radius: 21px;
+    background-color: rgba(255, 253, 246, 0.3);
+    padding: rem(25) rem(100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+  }
+
+  &__content {
+  }
+
+  &__top {
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__row {
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    column-gap: rem(30);
+
+    display: flex;
+  }
+
+  &__col {
+    flex: 1 0 50%;
+  }
+
+  &__title {
+    line-height: 125%; /* 20/16 */
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: rem(30);
+
+    padding-left: rem(24);
+  }
+
+  &__list {
+    padding-left: rem(24);
+
+    &_line {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: rem(50);
+    }
+
+    &_lines {
+      .block__item::before {
+        background-color: #ffd12f;
+        height: rem(2);
+        border-radius: rem(1);
+        top: rem(10);
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%; /* 22.4px */
+
+    &:not(:last-child) {
+      margin-bottom: rem(15);
+    }
+
+    &::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: #fffdf6;
+      display: block;
+
+      position: absolute;
+      top: rem(6);
+      left: rem(-24);
+    }
+  }
+}
+
+.top-block {
+  border-radius: 21px;
+  background: #fffdf6;
+  padding: rem(20) rem(25);
+
+  &__title {
+    font-size: 25px;
+    line-height: 124%; /* 31/25 */
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    line-height: 140%; /* 22.4px */
+  }
+}
+
+.brand {
+  &__form {
+    max-width: rem(390);
+    margin-left: auto;
+    margin-bottom: rem(20);
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: rem(128) rem(212) rem(142);
+  }
+
+  &__smile {
+    // height: fit-content;
+    width: max-content;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      position: absolute;
+      bottom: 50%;
+      left: rem(-20);
+    }
+    &.mid {
+      &::before {
+        content: url("@img/brand/arrow01.svg");
+      }
+    }
+    &.last {
+      &::before {
+        content: url("@img/brand/arrow02.svg");
+        left: rem(-40);
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: rem(75);
+    color: #252525;
+    font-size: rem(18);
+    line-height: 120%;
+
+    border-left: 1px solid #313131;
+    border-right: 1px solid #313131;
+  }
+
+  &__stars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::before,
+    &::after {
+      @extend %ic;
+      font-size: rem(24);
+      letter-spacing: rem(8);
+    }
+    &::before {
+      color: #ffd12f;
+    }
+
+    &.low {
+      &::before {
+        content: "\e903";
+      }
+      &::after {
+        content: "\e904\e904";
+      }
+    }
+    &.mid {
+      &::before {
+        content: "\e903\e903";
+      }
+      &::after {
+        content: "\e904";
+      }
+    }
+    &.max {
+      &::before {
+        content: "\e903\e903\e903";
+      }
+    }
+  }
+}
+.brand-form {
+  border: 1px solid #313131;
+  padding: 0 rem(20);
+  border-radius: rem(25);
+  height: rem(50);
+
+  display: flex;
+  align-items: center;
+  column-gap: rem(10);
+
+  &__button {
+    font-size: rem(24);
+  }
+
+  &__input {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    font-size: rem(22);
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
