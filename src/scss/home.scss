@@ -736,3 +736,86 @@
     }
   }
 }
+
+//========================================================================================================================================================
+
+.team {
+  @include adaptiveValue("padding-top", 75, 50);
+  @include adaptiveValue("padding-bottom", 75, 50);
+  &__container {
+  }
+
+  &__body {
+  }
+
+  &__title {
+    margin-bottom: rem(50);
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: rem(10);
+    @include adaptiveValue("column-gap", 20, 15);
+
+    @media (max-width: $tablet) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: $mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+  }
+}
+
+.item-team {
+  &_text {
+    position: relative;
+    padding-bottom: percent(292, 224);
+    height: fit-content;
+  }
+
+  &__text {
+    padding: rem(15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black, #313131);
+    text-align: center;
+    font-family: Wix Madefor Display;
+    @include adaptiveValue("font-size", 25, 20);
+    line-height: 128%; /* 32/25 */
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 1px solid #000;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  &__image-ibg {
+    padding-bottom: percent(292, 224);
+  }
+
+  &__content {
+    margin-top: rem(10);
+  }
+
+  &__title {
+    @include adaptiveValue("font-size", 16, 15);
+    font-weight: 500;
+    line-height: 140%; /* 22.4px */
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 5, 2);
+    }
+  }
+
+  &__post {
+    font-size: rem(10);
+    font-weight: 400;
+    line-height: 140%; /* 14px */
+  }
+}
