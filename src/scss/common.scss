@@ -1,1 +1,21 @@
 // Заголовки, загальні БЕМ блоки та інше...
+
+.title {
+  font-family: Wix Madefor Display;
+  @include adaptiveValue("font-size", 40, 32);
+  line-height: 127.5%; /* 51/40 */
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.number {
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: $mobile) {
+    margin: 0 rem(-10);
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

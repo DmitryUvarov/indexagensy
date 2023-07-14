@@ -104,3 +104,59 @@
 }
 
 //====================================================================================================
+
+.services {
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    gap: rem(20);
+    padding: rem(40) 0;
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    flex: 0 0 percent(550, 1200);
+  }
+
+  &__list {
+    @media (max-width: $mobile) {
+      @include adaptiveValue("padding-left", 46, 36);
+    }
+  }
+
+  &__item {
+    position: relative;
+    @include adaptiveValue("font-size", 25, 20);
+    line-height: 124%; /* 31/25 */
+    font-weight: 400;
+
+    &::before {
+      content: "";
+      width: rem(30);
+      @include adaptiveValue("width", 30, 20);
+      height: rem(1);
+      border-radius: 1px;
+      background: var(--black, #313131);
+
+      position: absolute;
+      top: rem(15);
+      @include adaptiveValue("top", 15, 12);
+      left: rem(-46);
+      @include adaptiveValue("left", -46, -36);
+    }
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 21, 15);
+    }
+  }
+
+  &__number {
+  }
+}
+
+//========================================================================================================================================================
