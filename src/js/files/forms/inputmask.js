@@ -1,13 +1,16 @@
-/* Маски для полів (у роботі) */
+/* Маски для полей (в работе) */
 
-// Підключення функціоналу "Чертоги Фрілансера"
-// Підключення списку активних модулів
+// Подключение функционала "Чертогов Фрилансера"
+// Подключение списка активных модулей
 import { flsModules } from "../modules.js";
 
-// Підключення модуля
+// Подключение модуля
 import "inputmask/dist/inputmask.min.js";
 
-const inputMasks = document.querySelectorAll('input');
+const inputMasks = document.querySelectorAll('[data-phone]');
 if (inputMasks.length) {
-	flsModules.inputmask = Inputmask().mask(inputMasks);
+	flsModules.inputmask = Inputmask({
+		"mask": "+\\9\\98 (99) 999-99-99",
+  		showMaskOnHover: false
+	}).mask(inputMasks);
 }

@@ -38,36 +38,25 @@
 
   &__body {
     position: fixed;
-    width: 50%;
+    width: 100%;
     height: 100%;
     top: 0;
-    left: -50%;
+    left: -100%;
     overflow: auto;
     background-color: #313131;
     @include adaptiveValue("padding-top", 130, 100);
-    padding: rem(130) rem(15) rem(40);
+    padding: rem(130) rem(15) rem(40) rem(15);
     z-index: 4;
-    padding-left: calc((100vw - 1200px) / 2);
     border-right: 1px solid #313131;
-    transition:
-      left 0.3s ease 0s,
-      border-color 0.3s ease 0.3s;
-
-    @media (min-width: $tablet) {
-      padding-right: rem(100);
-    }
-    @media (max-width: $pc) {
-      padding-left: rem(15);
-    }
-    @media (max-width: $mobile) {
-      width: 100%;
-      left: -100%;
-      border: none;
-    }
+    transition: left 0.3s ease 0s;
 
     .menu-open & {
       left: 0;
-      border-color: #fffdf7;
+    }
+
+    @media (min-width: $pc) {
+      padding-left: calc((100vw - 1200px) / 2);
+      padding-right: calc((100vw - 1200px) / 2);
     }
   }
 
@@ -75,15 +64,20 @@
   }
 
   &__item {
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
   }
 
   &__link {
     display: inline-block;
-    font-size: rem(24);
-    color: #fffdf7;
-    padding: rem(10) 0;
-    width: 100%;
-    border-bottom: 2px solid #fffdf7;
+    color: #fffdf6;
+
+    font-family: Wix Madefor Display;
+    @include adaptiveValue("font-size", 40, 24);
+    line-height: 127.5%; /* 51/40 */
+    font-weight: 700;
+    text-transform: uppercase;
     transition: all 0.3s ease 0s;
 
     @media (any-hover: hover) {
@@ -92,6 +86,47 @@
         color: rgba(81, 81, 81, 0.9);
       }
     }
+  }
+
+  &__sublist {
+    margin-top: rem(20);
+  }
+
+  &__subitem {
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+
+    @include adaptiveValue("padding-left", 69, 45);
+
+    &::before {
+      content: "";
+      display: block;
+      width: rem(40);
+      @include adaptiveValue("width", 40, 30);
+      height: rem(4);
+      border-radius: 1px;
+      background-color: #ffd12f;
+
+      position: absolute;
+      left: 0;
+      top: rem(24);
+
+      @include adaptiveValue("top", 24, 13);
+    }
+  }
+
+  &__sublink {
+    color: #fffdf6;
+    font-family: Inter;
+    font-style: italic;
+    @include adaptiveValue("font-size", 40, 24);
+    line-height: 127.5%; /* 51/40 */
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    opacity: 0.7;
   }
 }
 
