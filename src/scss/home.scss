@@ -515,7 +515,6 @@
 
 .cases-line {
   &__spollers {
-    counter-reset: spoller-num;
   }
 
   &__item {
@@ -548,13 +547,6 @@
 
     transition: all 0.3s ease 0s;
 
-    &::before {
-      counter-increment: spoller-num;
-      content: "(" counter(spoller-num, decimal-leading-zero) ")";
-      opacity: 0.5;
-      margin-right: rem(20);
-    }
-
     &::after {
       content: "\e900";
       @extend %ic;
@@ -567,9 +559,6 @@
       border-bottom: none;
       &::after {
         transform: rotate(180deg);
-      }
-      &::before {
-        opacity: 1;
       }
     }
 

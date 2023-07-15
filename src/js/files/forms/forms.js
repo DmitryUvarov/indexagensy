@@ -96,6 +96,11 @@ export let formValidate = {
 		} else if (formRequiredItem.type === "checkbox" && !formRequiredItem.checked) {
 			this.addError(formRequiredItem);
 			error++;
+		} else if (formRequiredItem.dataset.required === "phone") {
+			if (formRequiredItem.value.replace(/[^\d;]/g, '').length < 12) {
+				this.addError(formRequiredItem);
+				error++;
+			}
 		} else {
 			if (!formRequiredItem.value.trim()) {
 				this.addError(formRequiredItem);
@@ -212,7 +217,7 @@ export function formSubmit() {
 				form: form
 			}
 		}));
-		// Показуємо попап, якщо підключено модуль попапів 
+		// Показуємо попап, якщо підключено модуль попапів
 		// та для форми вказано налаштування
 		setTimeout(() => {
 			if (flsModules.popup) {

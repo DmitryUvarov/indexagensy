@@ -7,12 +7,12 @@
 				<div class="footer__contact-item">Email:<a href="tel:998946657945">(94) 665-79-45</a></div>
 				<div class="footer__logo"><img src="@img/logo.svg" alt=""></div>
 			</div>
-			<form action="#" class="footer__form form-footer">
+			<form data-dev class="form" method="POST" action="sendmail.php" class="footer__form form-footer">
 				<div class="form-footer__line">
-					<input class="form-footer__input" type="text" placeholder="имя">
-					<input class="form-footer__input" type="text" placeholder="номер телефона" data-phone>
+					<input class="form-footer__input" type="text" placeholder="имя" data-required data-validate>
+					<input class="form-footer__input" type="text" placeholder="номер телефона" data-required="phone" data-validate data-phone>
 				</div>
-				<button class="form-footer__button">отправить</button>
+				<button type="submit" class="form-footer__button">отправить</button>
 			</form>
 		</div>
 	</div>
