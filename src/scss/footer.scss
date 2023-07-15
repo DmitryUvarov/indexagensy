@@ -22,10 +22,11 @@
       font-size: rem(152);
       color: #ffce20;
       position: absolute;
-      right: -256px;
-      @include adaptiveValue("right", -256, -86);
-      top: rem(34);
 
+      @media (min-width: $pc) {
+        top: rem(34);
+        @include adaptiveValue("right", -256, -86);
+      }
       @media (max-width: $pc) {
         font-size: rem(70);
         @include adaptiveValue("font-size", 70, 50);
