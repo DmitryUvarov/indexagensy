@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer" id="contactForm">
 	<div class="footer__container">
 		<div class="footer__title _icon-arrow">Начать проект</div>
 		<div class="footer__body">
@@ -9,8 +9,8 @@
 			</div>
 			<form data-dev class="form" method="POST" action="sendmail.php" class="footer__form form-footer">
 				<div class="form-footer__line">
-					<input class="form-footer__input" type="text" placeholder="имя" data-required data-validate>
-					<input class="form-footer__input" type="text" placeholder="номер телефона" data-required="phone" data-validate data-phone>
+					<input class="form-footer__input" type="text" name="name" placeholder="имя" data-required data-validate>
+					<input class="form-footer__input" type="text" name="phone" placeholder="номер телефона" data-required="phone" data-validate data-phone>
 				</div>
 				<button type="submit" class="form-footer__button">отправить</button>
 			</form>
