@@ -20,7 +20,7 @@
   }
 
   &__title {
-    color: var(--purple, #9582d7);
+    color: #fffdf6;
     font-family: Wix Madefor Display;
     font-size: rem(100);
     @include adaptiveValue("font-size", 100, 35);
@@ -164,7 +164,8 @@
 //========================================================================================================================================================
 
 .sec {
-  background: var(--purple-background, #b6aed3);
+  color: #fffdf6;
+  background: #313131;
   box-shadow: 0px -4px 15px 0px rgba(62, 59, 71, 0.25);
 
   @include adaptiveValue("padding-top", 65, 40);
@@ -344,6 +345,7 @@
   border-radius: 21px;
   background: #fffdf6;
   padding: rem(20) rem(25);
+  color: #313131;
 
   &__title {
     @include adaptiveValue("font-size", 25, 20);
@@ -424,7 +426,7 @@
     align-items: center;
     justify-content: center;
     min-height: rem(75);
-    color: #252525;
+    color: #fffdf6;
     @include adaptiveValue("font-size", 18, 16);
     line-height: 120%;
 
@@ -491,7 +493,7 @@
     @include adaptiveValue("font-size", 22, 20);
 
     &::placeholder {
-      color: #313131;
+      color: #fffdf6;
     }
 
     &:focus {
@@ -522,7 +524,7 @@
 
   &__item {
     &:first-child .cases-line__title {
-      border-top: rem(1) solid #313131;
+      border-top: rem(1) solid #fffdf6;
     }
 
     @media (max-width: $pc) {
@@ -536,7 +538,7 @@
     max-width: rem($maxWidthContainer);
     margin: 0 auto;
 
-    color: #313131;
+    color: #fffdf6;
     font-family: Wix Madefor Display;
     @include adaptiveValue("font-size", 25, 18);
     line-height: 128%; /* 32/25 */
@@ -549,6 +551,7 @@
     align-items: center;
 
     transition: all 0.3s ease 0s;
+    opacity: 0.7;
 
     &::after {
       content: "\e900";
@@ -560,12 +563,13 @@
     &._spoller-active {
       color: #fffdf6;
       border-bottom: none;
+      opacity: 1;
       &::after {
         transform: rotate(180deg);
       }
     }
 
-    border-bottom: rem(1) solid #313131;
+    border-bottom: rem(1) solid #fffdf6;
   }
 
   &__body {
