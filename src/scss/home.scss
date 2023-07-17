@@ -601,6 +601,10 @@
     @media (max-width: $mobile) {
       width: 100%;
     }
+
+    &.bottom {
+      display: flex;
+    }
   }
 
   &__image {
@@ -608,6 +612,14 @@
 
     img {
       max-width: 100%;
+    }
+
+    &_bottom {
+      padding-bottom: rem(30);
+    }
+
+    .bottom & {
+      margin-top: auto;
     }
   }
 
