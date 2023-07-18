@@ -23,7 +23,7 @@
     color: #fffdf6;
     font-family: Wix Madefor Display;
     font-size: rem(100);
-    @include adaptiveValue("font-size", 100, 35);
+    @include adaptiveValue("font-size", 60, 35);
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
