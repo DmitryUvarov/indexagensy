@@ -207,6 +207,7 @@
 				transition: left 0.3s;
 				z-index: 7;
 				background-color: #313131;
+				border-bottom: 1px solid rgba(221, 221, 221, 0.6);
 			}
 			.menu-open & {
 				left: 0;

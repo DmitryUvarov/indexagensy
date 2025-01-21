@@ -2,51 +2,67 @@
 
 .services {
 	padding: rem(40) 0 0;
+	position: relative;
+
+	&::after {
+		content: "";
+		background-image: url("@img/decore-line.svg");
+		background-repeat: no-repeat;
+		background-size: contain;
+		position: absolute;
+		@include adaptiveValue("width", 1458, 500);
+		aspect-ratio: 1458 / 596;
+		top: rem(-30);
+		left: 0;
+		pointer-events: none;
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
 	&__container {
 	}
 
 	&__body {
-		display: flex;
-		gap: rem(20);
+		@include adaptiveValue("padding-bottom", 180, 30);
+		position: relative;
 
-		@media (max-width: $mobile) {
-			flex-direction: column;
+		&::before {
+			content: "";
+			position: absolute;
+			width: 500vw;
+			@include adaptiveValue("height", 180, 30);
+			bottom: 0;
+			left: -100vw;
+			background-color: #313131;
 		}
 	}
 
 	&__title {
-		flex: 0 0 percent(550, 1200);
+		&:not(:last-child) {
+			margin-bottom: rem(20);
+		}
 	}
 
 	&__list {
-		@media (max-width: $mobile) {
-			@include adaptiveValue("padding-left", 46, 36);
-		}
+		@include adaptiveValue("margin-bottom", 250, 30);
 	}
 
 	&__item {
+		list-style: disc;
 		position: relative;
-		@include adaptiveValue("font-size", 25, 20);
-		line-height: 124%; /* 31/25 */
 		font-weight: 400;
-
-		&::before {
-			content: "";
-			width: rem(30);
-			@include adaptiveValue("width", 30, 20);
-			height: rem(1);
-			border-radius: 1px;
-			background: var(--black, #313131);
-
-			position: absolute;
-			top: rem(15);
-			@include adaptiveValue("top", 15, 12);
-			left: rem(-46);
-			@include adaptiveValue("left", -46, -36);
-		}
+		font-size: rem(16);
+		line-height: 140%;
+		margin-left: rem(20);
 
 		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom", 21, 15);
+			margin-bottom: rem(8);
+		}
+
+		a {
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 
