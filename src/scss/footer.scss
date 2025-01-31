@@ -1,159 +1,170 @@
 //====================================================================================================
 .footer {
-  background: #313131;
-  @include adaptiveValue("padding-top", 70, 50);
-  @include adaptiveValue("padding-bottom", 60, 40);
-  &__container {
-  }
+	background: #313131;
+	@include adaptiveValue("padding-top", 70, 50);
+	@include adaptiveValue("padding-bottom", 60, 40);
+	&__container {
+	}
 
-  &__title {
-    position: relative;
-    color: #fffdf6;
-    font-family: Wix Madefor Display;
-    @include adaptiveValue("font-size", 115, 35);
-    line-height: 126.1%; /* 145/115 */
-    font-weight: 700;
-    text-transform: uppercase;
-    width: max-content;
+	&__title {
+		position: relative;
+		color: #fffdf6;
+		font-family: Wix Madefor Display;
+		@include adaptiveValue("font-size", 115, 35);
+		line-height: 126.1%; /* 145/115 */
+		font-weight: 700;
+		text-transform: uppercase;
+		width: max-content;
 
-    @include adaptiveValue("margin-bottom", 60, 50);
+		@include adaptiveValue("margin-bottom", 60, 50);
 
-    &::before {
-      font-size: rem(152);
-      color: #ffce20;
-      position: absolute;
+		&::before {
+			font-size: rem(152);
+			color: #ffce20;
+			position: absolute;
 
-      @media (min-width: $pc) {
-        top: rem(34);
-        @include adaptiveValue("right", -256, -86);
-      }
-      @media (max-width: $pc) {
-        font-size: rem(70);
-        @include adaptiveValue("font-size", 70, 50);
-        right: rem(-60);
-        top: 50%;
-        transform: translateY(-50%);
-      }
-    }
+			@media (min-width: $pc) {
+				top: rem(34);
+				@include adaptiveValue("right", -256, -86);
+			}
+			@media (max-width: $pc) {
+				font-size: rem(70);
+				@include adaptiveValue("font-size", 70, 50);
+				right: rem(-60);
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
 
-    &::after {
-      content: "";
-      border-radius: 5px;
-      background: #ffce20;
-      width: rem(65);
-      height: rem(10);
-      position: absolute;
-      right: -185px;
-      @include adaptiveValue("right", -185, -15);
-      top: rem(34);
+		&::after {
+			content: "";
+			border-radius: 5px;
+			background: #ffce20;
+			width: rem(65);
+			height: rem(10);
+			position: absolute;
+			right: -185px;
+			@include adaptiveValue("right", -185, -15);
+			top: rem(34);
 
-      @media (max-width: $pc) {
-        display: none;
-      }
-    }
-  }
+			@media (max-width: $pc) {
+				display: none;
+			}
+		}
+	}
 
-  &__body {
-    display: flex;
-    justify-content: space-between;
-    gap: rem(20);
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		gap: rem(20);
 
-    @media (max-width: $mobile) {
-      flex-direction: column;
-    }
-  }
+		@media (max-width: $mobile) {
+			flex-direction: column;
+		}
 
-  &__contact {
-    width: max-content;
-  }
+		&:not(:last-child) {
+			margin-bottom: rem(40);
+		}
+	}
 
-  &__contact-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: rem(25);
-    color: #fffdf6;
-    @include adaptiveValue("font-size", 25, 20);
-    line-height: 120%; /* 30/25 */
-    font-weight: 500;
-    text-transform: uppercase;
+	&__contact {
+		width: max-content;
+	}
 
-    &:not(:last-child) {
-      margin-bottom: rem(20);
-    }
-  }
+	&__contact-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: rem(25);
+		color: #fffdf6;
+		@include adaptiveValue("font-size", 25, 20);
+		line-height: 120%; /* 30/25 */
+		font-weight: 500;
+		text-transform: uppercase;
 
-  &__logo {
-    max-width: rem(150);
-    margin-top: rem(30);
+		&:not(:last-child) {
+			margin-bottom: rem(20);
+		}
+	}
 
-    img {
-      max-width: 100%;
-    }
-  }
+	&__logo {
+		max-width: rem(150);
+		margin-top: rem(30);
 
-  &__form {
-    flex: 0 0 percent(640, 1200);
-  }
+		img {
+			max-width: 100%;
+		}
+	}
+
+	&__form {
+		flex: 0 0 percent(640, 1200);
+	}
+
+	&__company {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 140%; /* 22.4px */
+		color: #fffdf6;
+	}
 }
 
 .form-footer {
-  &__line {
-    display: flex;
+	&__line {
+		display: flex;
 
-    align-items: center;
-    column-gap: rem(38);
+		align-items: center;
+		column-gap: rem(38);
 
-    @media (max-width: $mobile) {
-      flex-direction: column;
-      row-gap: rem(20);
-    }
-  }
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			row-gap: rem(20);
+		}
+	}
 
-  &__input {
-    width: 100%;
-    border-radius: 16px;
-    border: 1px solid #fffdf6;
-    padding: rem(20);
+	&__input {
+		width: 100%;
+		border-radius: 16px;
+		border: 1px solid #fffdf6;
+		padding: rem(20);
 
-    color: #fffdf6;
-    font-size: 16px;
-    line-height: 118.8%; /* 19/16 */
-    font-weight: 400;
-    background-color: transparent;
-    height: rem(59);
+		color: #fffdf6;
+		font-size: 16px;
+		line-height: 118.8%; /* 19/16 */
+		font-weight: 400;
+		background-color: transparent;
+		height: rem(59);
 
-    &:focus {
-      outline: none;
-    }
+		&:focus {
+			outline: none;
+		}
 
-    &._form-error {
-      border-color: red;
-    }
-  }
+		&._form-error {
+			border-color: red;
+		}
+	}
 
-  &__button {
-    padding: rem(10) rem(20);
-    border-radius: 16px;
-    border: 1px solid #fffdf6;
-    background: #fffdf6;
+	&__button {
+		padding: rem(10) rem(20);
+		border-radius: 16px;
+		border: 1px solid #fffdf6;
+		background: #fffdf6;
 
-    text-align: center;
+		text-align: center;
 
-    font-size: 16px;
-    line-height: 118.8%; /* 19/16 */
-    font-weight: 400;
-    text-transform: uppercase;
-    transition: all 0.3s ease 0s;
+		font-size: 16px;
+		line-height: 118.8%; /* 19/16 */
+		font-weight: 400;
+		text-transform: uppercase;
+		transition: all 0.3s ease 0s;
 
-    @include adaptiveValue("margin-top", 50, 40);
+		@include adaptiveValue("margin-top", 50, 40);
 
-    @media (any-hover: hover) {
-      &:hover {
-        box-shadow: rgba(255, 255, 255, 0.3) 0px 7px 29px 0px;
-      }
-    }
-  }
+		@media (any-hover: hover) {
+			&:hover {
+				box-shadow: rgba(255, 255, 255, 0.3) 0px 7px 29px 0px;
+			}
+		}
+	}
 }
 
 //====================================================================================================
